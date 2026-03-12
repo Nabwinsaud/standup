@@ -1,0 +1,38 @@
+{
+  "name": "standup-cli",
+  "version": "1.0.0",
+  "description": "Pull your git commits, shape them into a beautiful standup report — right from your terminal.",
+  "module": "src/index.ts",
+  "type": "module",
+  "bin": {
+    "standup": "src/index.ts"
+  },
+  "scripts": {
+    "start": "bun src/index.ts",
+    "dev": "bun --watch src/index.ts",
+    "test": "bun test",
+    "build": "./build.sh",
+    "build:current": "./build.sh current",
+    "build:mac-arm": "./build.sh darwin-arm64",
+    "build:mac-intel": "./build.sh darwin-x64",
+    "build:linux-arm": "./build.sh linux-arm64",
+    "build:linux": "./build.sh linux-x64",
+    "build:windows": "./build.sh windows-x64"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "citty": "^0.2.1",
+    "cli-table3": "^0.6.5",
+    "dayjs": "^1.11.19",
+    "openai": "^6.27.0",
+    "ora": "^9.3.0",
+    "smol-toml": "^1.6.0"
+  }
+}
