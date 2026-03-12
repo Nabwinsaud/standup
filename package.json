@@ -17,7 +17,10 @@
     "build:mac-intel": "./build.sh darwin-x64",
     "build:linux-arm": "./build.sh linux-arm64",
     "build:linux": "./build.sh linux-x64",
-    "build:windows": "./build.sh windows-x64"
+    "build:windows": "./build.sh windows-x64",
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:minor": "npm version minor && git push && git push --tags",
+    "release:major": "npm version major && git push && git push --tags"
   },
   "devDependencies": {
     "@types/bun": "latest"
