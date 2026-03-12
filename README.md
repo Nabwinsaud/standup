@@ -17,7 +17,7 @@ Supports multiple repos, date ranges, markdown/JSON export, clipboard copy, and 
 curl -fsSL https://raw.githubusercontent.com/Nabwinsaud/standup/main/install.sh | bash
 ```
 
-This clones the repo, installs [Bun](https://bun.sh) if needed, and symlinks `standup` into `~/.local/bin`.
+Auto-detects your platform, downloads the latest prebuilt binary, verifies the checksum, and installs to `~/.local/bin`. No `sudo` required.
 
 ### Download a prebuilt binary
 
@@ -35,7 +35,7 @@ Grab the latest binary from the [Releases](https://github.com/Nabwinsaud/standup
 # Example: macOS Apple Silicon
 curl -fSL https://github.com/Nabwinsaud/standup/releases/latest/download/standup-darwin-arm64 -o standup
 chmod +x standup
-sudo mv standup /usr/local/bin/
+mv standup ~/.local/bin/
 ```
 
 ### From source

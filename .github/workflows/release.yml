@@ -132,25 +132,35 @@ jobs:
           body: |
             ## Installation
 
-            Download the binary for your platform, make it executable, and move it to your PATH:
+            **Recommended:** Use the install script (auto-detects platform, no sudo):
 
             ```bash
+            curl -fsSL https://raw.githubusercontent.com/Nabwinsaud/standup/main/install.sh | bash
+            ```
+
+            **Or manually** download the binary for your platform:
+
+            ```bash
+            mkdir -p ~/.local/bin
+
             # macOS (Apple Silicon)
             curl -fSL https://github.com/Nabwinsaud/standup/releases/download/${{ github.ref_name }}/standup-darwin-arm64 -o standup
-            chmod +x standup && sudo mv standup /usr/local/bin/
+            chmod +x standup && mv standup ~/.local/bin/
 
             # macOS (Intel)
             curl -fSL https://github.com/Nabwinsaud/standup/releases/download/${{ github.ref_name }}/standup-darwin-x64 -o standup
-            chmod +x standup && sudo mv standup /usr/local/bin/
+            chmod +x standup && mv standup ~/.local/bin/
 
             # Linux (x64)
             curl -fSL https://github.com/Nabwinsaud/standup/releases/download/${{ github.ref_name }}/standup-linux-x64 -o standup
-            chmod +x standup && sudo mv standup /usr/local/bin/
+            chmod +x standup && mv standup ~/.local/bin/
 
             # Linux (ARM64)
             curl -fSL https://github.com/Nabwinsaud/standup/releases/download/${{ github.ref_name }}/standup-linux-arm64 -o standup
-            chmod +x standup && sudo mv standup /usr/local/bin/
+            chmod +x standup && mv standup ~/.local/bin/
             ```
+
+            Make sure `~/.local/bin` is in your `PATH`.
 
             For Windows, download `standup-windows-x64.exe` and add it to your PATH.
 
