@@ -76,7 +76,10 @@ detect_platform() {
 
   PLATFORM="${os}-${arch}"
   BINARY_NAME="standup-${PLATFORM}"
-  [ "$os" = "windows" ] && BINARY_NAME="${BINARY_NAME}.exe"
+
+  if [ "$os" = "windows" ]; then
+    BINARY_NAME="${BINARY_NAME}.exe"
+  fi
 }
 
 # ─── Fetch latest release tag ───────────────────────────────────────

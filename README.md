@@ -19,6 +19,15 @@ curl -fsSL https://raw.githubusercontent.com/Nabwinsaud/standup/main/install.sh 
 
 Auto-detects your platform, downloads the latest prebuilt binary, verifies the checksum, and installs to `~/.local/bin`. No `sudo` required.
 
+If `standup` is not found after install, your shell probably does not include `~/.local/bin` in `PATH` yet:
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Use your shell's config file if you are not on Zsh, for example `~/.bashrc`.
+
 ### Download a prebuilt binary
 
 Grab the latest binary from the [Releases](https://github.com/Nabwinsaud/standup/releases) page for your platform:
